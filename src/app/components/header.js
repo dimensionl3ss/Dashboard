@@ -1,29 +1,40 @@
-import React from 'react';
+'use client';
+// This is a client component
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
     return (
-        <header className="bg-[#f5f4fb] text-black shadow-md">
-            <div className="container flex items-center py-4 px-0">
-                <div className="text-2xl font-bold ml-6">Kaafi Cool Dashboard</div>
-                <nav className='ml-auto'>
-                    <ul className="flex space-x-6 justify-end ml-auto mr-6">
-                        <li>
-                            <Link href="/" className="hover:text-black-200 transition-colors">Resource</Link>
-                        </li>
-                        <li>
-                            <Link href="/" className="hover:text-black-200 transition-colors">Help</Link>
-                        </li>
-                        <li>
-                            <Link href="/" className="hover:text-black-200 transition-colors">Contacts</Link>
-                        </li>
-                        <li>
-                            <Link href="/login"  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Login</Link>
-                        </li>
-                    </ul>
-                </nav>
+        <header className='flex flex-col sm:flex-row justify-between sm:items-center items-start bg-gray-800 text-white ml-auto sm:ml-0 p-4 shadow-md sm:space-y-0 space-y-3'>
+            <div className="flex items-center space-x-2 sm:space-x-4">
+                <div className="text-xl sm:text-xl font-bold ">
+                    <Link href="/">Logo</Link>
+                </div>
+                <div className="text-lg sm:text-2xl font-bold">
+                    My Dashboard
+                </div>
             </div>
-        </header >
+            <input
+                    type="text"
+                    className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 mt-2 sm:mt-0"
+                    placeholder='Search......'
+                />
+            <ul className='flex flex-col sm:flex-row sm:space-y-0 space-y-3 items-start sm:items-center justify-between  space-x-0 md:space-x-6 sm:space-x-2 p-0 sm:p-3'>
+                    <li className=''>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li className=''>
+                        <Link href="/about">About</Link>
+                    </li>
+                    <li className=''>
+                        <Link href="/contact">Contact</Link>
+                    </li>
+                    <li className=''>
+                        <Link href="/dashboard">Login</Link>
+                    </li>
+                </ul>
+
+        </header>
     );
 };
 
